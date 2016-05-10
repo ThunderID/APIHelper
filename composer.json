@@ -14,7 +14,6 @@
     },
     "autoload": {
         "classmap": [
-            "src/migrations/"
         ],
         "psr-4": {
             "ThunderID\\APIHelper\\": "src/"
