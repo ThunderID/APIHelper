@@ -2,6 +2,9 @@
 
 Package contain engine to help basic API Post & Request.
 
+# Require
+Guzzlehttp/guzzle": "~5.3"
+
 # Installation
 
 composer.json:
