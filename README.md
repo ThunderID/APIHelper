@@ -23,6 +23,14 @@ run
 
 # Usage
 
+## ENV setting
+1. Domain 
+API_domain="YOUR DOMAIN"
+2. Port (if your domain use port. if you don't, you dont need to configure it on your env)
+API_port="YOUR PORT"
+3. Timeout (set custom waiting timout. Don't configure if you want use default value)
+API_timeout="time interval"
+
 service provider
 ```
 'ThunderID\APIHelper\ThunderAPIHelperServiceProvider::class'
