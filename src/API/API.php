@@ -1,6 +1,6 @@
 <?php
 
-namespace ThunderID\API;
+namespace ThunderID\ThunderAPIHelper\API;
 
 use Exception;
 use GuzzleHttp\Client;

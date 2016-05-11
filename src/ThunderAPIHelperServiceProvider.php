@@ -1,4 +1,4 @@
-<?php namespace ThunderID\ThunderAPIHelperServiceProvider;
+<?php namespace ThunderID\ThunderAPIHelper;
 
 use Illuminate\Support\ServiceProvider;
 
