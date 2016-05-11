@@ -2,7 +2,7 @@
 
 namespace ThunderID\APIHelper\API;
 
-use ThunderID\APIHelper\API;
+use ThunderID\APIHelper\API\API;
 use Exception, Session, Redirect, Route;
 
 /**

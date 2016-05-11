@@ -31,6 +31,7 @@ service provider
 Aliases
 
 1. API connector
+desc : to comunicate (post/get) data (to/from) api
 ```
 'API' => ThunderID\APIHelper\API\API::class,
 ```
