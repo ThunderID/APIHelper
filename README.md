@@ -22,39 +22,13 @@ run
 ```
 
 # Usage
-//continued
 
 service provider
 ```
-'ThunderID\ThunderOauthSQL\ThunderOauthSQLServiceProvider'
+'ThunderID\APIHelper\ThunderAPIHelperServiceProvider::class'
 ```
 
-migration
+Aliases
 ```
-php artisan migrate --path vendor/thunderid/thunderoauth-sql/src/migrations/
-```
-
-authorized engine
-```
-new ThunderID\ThunderOauthSQL\Authorizer(app('request'))
-```
-
-middleware oauth (kernel)
-```
-'oauth' 		=> ThunderID\ThunderOauthSQL\Middleware\OAuthMiddleware::class
-```
-
-middleware oauth (route group)
-```
-'middleware' => 'oauth'
-```
-
-middleware oauth scope (kernel)
-```
-'oauth-scope' 		=> ThunderID\ThunderOauthSQL\Middleware\OAuthScopeMiddleware::class
-```
-
-middleware oauth scope (route group)
-```
-'middleware' => 'oauth-scope:employee'
+	API connector : 'API' => ThunderID\APIHelper\API\API::class,
 ```
