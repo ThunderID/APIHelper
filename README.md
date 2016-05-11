@@ -43,3 +43,9 @@ desc : to comunicate (post/get) data (to/from) api
 ```
 'API' => ThunderID\APIHelper\API\APIData::class,
 ```
+
+2. JSEND
+desc : to transfer data as jsend format
+```
+'JSEND' => ThunderID\APIHelper\Data\Jsend::class,
+```
