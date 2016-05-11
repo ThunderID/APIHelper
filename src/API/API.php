@@ -17,14 +17,24 @@ use GuzzleHttp\Client;
 
 class API
 {
-	// protected $domain			= 'http://192.168.1.118';
-	protected $domain			= 'http://apimanager';
-	protected $port				= null;
-	public $timeout				= 200;
+	protected $domain				= null;
+	protected $port					= null;
+	public $timeout					= 200;
 	public $basic_url;
 
 	public function __construct()
 	{
+		//get domain from setting 
+		$this->domain 			= getenv('API_domain');
+		$this->port 			= getenv('API_port');
+		$this->timeout 			= getenv('API_timeout');
+
+		//validate domain
+		if(is_null($this->domain))
+		{
+			//send error msg no domain configured
+		}
+
 		$this->basic_url 		= $this->domain;
 
 		if(!is_null($this->port))
