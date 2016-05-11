@@ -29,6 +29,8 @@ service provider
 ```
 
 Aliases
+
+1. API connector
 ```
-	API connector : 'API' => ThunderID\APIHelper\API\API::class,
+'API' => ThunderID\APIHelper\API\API::class,
 ```
