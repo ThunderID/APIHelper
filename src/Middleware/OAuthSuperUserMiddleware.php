@@ -4,14 +4,14 @@ namespace ThunderID\APIHelper\Middleware;
 
 use Closure;
 use App;
-use App\Libraries\API;
+use ThunderID\APIHelper\API\API;
 
 /**
  * Class middleware of access token middleware
  *
  * @author cmooy
  */
-class OAuthScopeMiddleware
+class OAuthSuperUserMiddleware
 {
 	/**
 	 * Create a new oauth user middleware instance.
@@ -33,16 +33,14 @@ class OAuthScopeMiddleware
 	 *
 	 * @return mixed
 	 */
-	public function handle($request, Closure $next, $scope)
+	public function handle($request, Closure $next)
 	{
 		$input 					= $request->input();
 		$input['HTTP_HOST'] 	= $request->server('HTTP_HOST');
-		$input['scope'] 		= [$scope];
 
-		$is_allowed				= json_decode($this->api->post('/oauth/scope/middleware', $input), true);
-		$is_allowed				= json_decode($this->api->OauthScopeMiddleware($input), true);
+		$is_auth				= json_decode($this->api->post('/oauth/super/user/middleware', $input), true);
 
-		if($is_allowed['status']!='success')
+		if($is_auth['status']!='success')
 		{
 			App::abort(404);
 		}

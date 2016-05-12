@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace ThunderID\APIHelper\Middleware;
 
 use Closure;
 use App;
-use App\Libraries\API;
+use ThunderID\APIHelper\API\API;
 
 /**
  * Class middleware of access token middleware
@@ -38,7 +38,7 @@ class OAuthMiddleware
 		$input 					= $request->input();
 		$input['HTTP_HOST'] 	= $request->server('HTTP_HOST');
 
-		$is_auth				= json_decode($this->api->OauthMiddleware($input), true);
+		$is_auth				= json_decode($this->api->post('/oauth/middleware', $input), true);
 
 		if($is_auth['status']!='success')
 		{
