@@ -33,10 +33,11 @@ class OAuthSuperUserMiddleware
 	 *
 	 * @return mixed
 	 */
-	public function handle($request, Closure $next)
+	public function handle($request, Closure $next, $scope)
 	{
 		$input 					= $request->input();
 		$input['HTTP_HOST'] 	= $request->server('HTTP_HOST');
+		$input['scope'] 		= [$scope];
 
 		$is_auth				= json_decode($this->api->post('/oauth/super/user/middleware', $input), true);
 
