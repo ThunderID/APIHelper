@@ -29,6 +29,11 @@ abstract class APIData
 
 		$this->apiData 				= ['access_token' => Session::get('access_token')];
 
+		if(isset($this->basic_url))
+		{
+			$this->api->basic_url 	= $this->basic_url;
+		}
+
 		if(is_null(Session::get('access_token')) && app('url')!=env('ROUTE_LOGGING', '/logging/in'))
 		{
 			redirect(env('ROUTE_LOGIN', '/log/in'));
