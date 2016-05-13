@@ -4,7 +4,7 @@ namespace ThunderID\APIHelper\Middleware;
 
 use Closure;
 use App;
-use App\Libraries\API;
+use ThunderID\APIHelper\API\API;
 
 /**
  * Class middleware of access token middleware
@@ -40,7 +40,6 @@ class OAuthScopeMiddleware
 		$input['scope'] 		= [$scope];
 
 		$is_allowed				= json_decode($this->api->post('/oauth/scope/middleware', $input), true);
-		$is_allowed				= json_decode($this->api->OauthScopeMiddleware($input), true);
 
 		if($is_allowed['status']!='success')
 		{

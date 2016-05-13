@@ -3,7 +3,7 @@
 namespace ThunderID\APIHelper\API;
 
 use ThunderID\APIHelper\API\API;
-use Exception, Session, Redirect, Route;
+use Exception, Session;
 
 /**
  * { APIData }
@@ -31,7 +31,7 @@ abstract class APIData
 
 		if(is_null(Session::get('access_token')) && app('url')!=env('ROUTE_LOGGING', '/logging/in'))
 		{
-			Redirect::route(env('ROUTE_LOGIN', '/log/in'))->send();
+			redirect(env('ROUTE_LOGIN', '/log/in'));
 		}
 	}
 
