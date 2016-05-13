@@ -29,9 +29,9 @@ abstract class APIData
 
 		$this->apiData 				= ['access_token' => Session::get('access_token')];
 
-		if(is_null(Session::get('access_token')) && Route::currentroutename()!='auth.postLogin')
+		if(is_null(Session::get('access_token')) && app('url')!=env('ROUTE_LOGGING', '/logging/in'))
 		{
-			Redirect::route('auth.getLogin')->send();
+			Redirect::route(env('ROUTE_LOGIN', '/log/in'))->send();
 		}
 	}
 

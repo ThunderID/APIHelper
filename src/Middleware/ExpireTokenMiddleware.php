@@ -41,7 +41,7 @@ class ExpireTokenMiddleware
 
 			if($result['status'] != 'success')
 			{
-				Redirect::route('auth.getLogin')->send();
+				Redirect::route(env('ROUTE_LOGIN', 'auth.login.get'))->send();
 			}
 			else
 			{

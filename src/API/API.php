@@ -88,7 +88,6 @@ class API
 										'base_uri' => $this->basic_url,
 									    'timeout'  => $this->timeout,
 									]);
-
 		$response 				= $client->post($this->basic_url . $url, ['body' => $data] , ['timeout' => $this->timeout] );
 		$response->addHeader('Content-Type','application/json');
 
